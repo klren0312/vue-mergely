@@ -16,15 +16,13 @@ import 'mergely'
 export default {
   name: 'App',
   mounted () {
-    jQuery(document).ready(() => {
-      jQuery('#mergely').mergely({
-        lhs: (setValue) => {
-          setValue('the quick red fox\njumped over the hairy dog');
-        },
-        rhs: (setValue) => {
-          setValue('the quick brown fox\njumped over the lazy dog');
-        }
-      });
+    jQuery('#mergely').mergely({
+      lhs: (setValue) => {
+        setValue('the quick red fox\njumped over the hairy dog');
+      },
+      rhs: (setValue) => {
+        setValue('the quick brown fox\njumped over the lazy dog');
+      }
     });
   }
 }
