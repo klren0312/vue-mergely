@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app"> 
+    <div class="mergely-full-screen-8">
+      <div class="mergely-resizer">
+        <div id="mergely"></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'codemirror/lib/codemirror.css'
+import 'mergely/lib/mergely.css'
+import 'mergely'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  mounted () {
+    jQuery(document).ready(() => {
+      jQuery('#mergely').mergely({
+        lhs: (setValue) => {
+          setValue('the quick red fox\njumped over the hairy dog');
+        },
+        rhs: (setValue) => {
+          setValue('the quick brown fox\njumped over the lazy dog');
+        }
+      });
+    });
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

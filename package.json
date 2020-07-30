@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "codemirror": "^5.56.0",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "mergely": "^4.1.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
